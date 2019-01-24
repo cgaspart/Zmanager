@@ -1,0 +1,27 @@
+{
+  "name": "zmanager",
+  "version": "1.0.0",
+  "description": "Blockchain secure & super node manager with dashboard",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cgaspart/Zmanager.git"
+  },
+  "keywords": [
+    "node",
+    "blockchaim",
+    "secure",
+    "super",
+    "manager",
+    "dahsboard"
+  ],
+  "author": "cgaspart & tberthie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cgaspart/Zmanager/issues"
+  },
+  "homepage": "https://github.com/cgaspart/Zmanager#readme"
+}
