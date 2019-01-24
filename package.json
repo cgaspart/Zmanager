@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/cgaspart/Zmanager/issues"
   },
-  "homepage": "https://github.com/cgaspart/Zmanager#readme"
+  "homepage": "https://github.com/cgaspart/Zmanager#readme",
+  "dependencies": {
+    "npx": "^10.2.0"
+  }
 }
