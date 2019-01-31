@@ -1,33 +1,16 @@
 {
   "name": "zmanager",
   "version": "1.0.0",
-  "description": "Blockchain secure & super node manager with dashboard",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "client": "cd client && yarn start",
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cgaspart/Zmanager.git"
-  },
-  "keywords": [
-    "node",
-    "blockchain",
-    "secure",
-    "super",
-    "manager",
-    "dahsboard"
-  ],
-  "author": "cgaspart & tberthie",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/cgaspart/Zmanager/issues"
-  },
-  "homepage": "https://github.com/cgaspart/Zmanager#readme",
   "dependencies": {
-    "babel-register": "^6.26.0",
-    "mysql": "^2.16.0",
-    "npx": "^10.2.0"
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "concurrently": "^4.0.1"
   }
 }
