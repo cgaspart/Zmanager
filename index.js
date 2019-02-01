@@ -1,22 +1,22 @@
 require('babel-register');
-const express = require('express');
-const bodyParser = require('body-parser');
 const {success, error} = require('./lib/jsonReturn.js');
-const app = express();
-const config = require('./srcs/config');
+const low = require('lowdb')
+const FileSync = require('lowdb/adapters/FileSync')
 
-var mysql      = require('mysql');
-var db         = mysql.createConnection({
-	host     : config.db.host,
-    database : config.db.database,
-    user     : config.db.user,
-    password : config.db.password
-});
+const adapter = new FileSync('db.json')
+const db = low(adapter)
 
-db.connect((err) => {
-  if (err) {
-    console.error("error connecting: " + err.message);
-    return;
-  }
-  console.log("connected as id: " +  db.threadId);
-});
+db.defaults({ nodes: [], user: {}})
+  .write()
+
+db.has('nodes')
+  .value()
+// Add a post
+/*db.get('posts')
+  .push({ id: 1, title: 'lowdb is awesome'})
+  .write()
+*/
+
+// Set a user using Lodash shorthand syntax
+/*db.set('user.name', 'typicode')
+  .write()*/
