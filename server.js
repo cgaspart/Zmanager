@@ -15,8 +15,13 @@ app.get('/api/nodeSaved', (req, res) => {
 })
 
 app.get('/api/addExemple', (req, res) => {
-  let nbOfNodes = zdb.addexemple();
-  res.send(success(nbOfNodes));
+  let result = zdb.addexemple();
+  res.send(success(result));
+})
+
+app.get('/api/rmExemple', (req, res) => {
+  let result = zdb.deleteTest();
+  res.send(success(result));
 })
 
 app.get('/api/hello', (req, res) => {

@@ -11,8 +11,15 @@ exports.getNumberOfNodes = () => {
 	return (res);
 }
 
+exports.deleteTest = () => {
+	let res = db.get('nodes')
+	.remove({ id: 132598 })
+	.write()
+}
+
 exports.addexemple = () => {
 	let res = db.get('nodes')
 	.push({ id: 132598, name: 'zen-node01.uredine.com', price: 5})
 	.write()
+	return (res);
 }

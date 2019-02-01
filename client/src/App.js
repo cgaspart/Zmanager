@@ -22,6 +22,13 @@ class App extends Component {
     return body;
   };
 
+  deleteNode = async () => {
+    const response = await fetch('/api/rmExemple');
+    const body = await response.json();
+    if (response.status !== 200) throw Error(body.message);
+    return body;
+  }
+
   handleSubmit = async e => {
     e.preventDefault();
     const response = await fetch('/api/world', {
@@ -47,6 +54,7 @@ render() {
           		<input type="text" value={this.state.post} onChange={e => this.setState({ post: e.target.value })}/>
           		<button type="submit">Submit</button>
         	</form>
+          <button type="button" onClick={this.deleteNode}>Delete</button>
         	<p>{this.state.responseToPost}</p>
 	</header>
       </div>
