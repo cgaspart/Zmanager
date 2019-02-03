@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import { MemoryRouter as Router, Route } from "react-router-dom";
-import  { menu } from './menu.js'
 import './App.css';
 
-class App extends Component {
+class Test extends Component {
   state = {
     response: '',
     post: '',
@@ -46,7 +44,6 @@ class App extends Component {
 render() {
     return (
       <div className="App">
-            <Route path="/" component={menu} />
         <header className="App-header">
         	<p>{this.state.response}</p>
         	<form onSubmit={this.handleSubmit}>
@@ -64,17 +61,4 @@ render() {
   }
 }
 
-export const createApp = () => {
-  return class SideNavApp extends React.Component {
-    render() {
-      return (
-        <Router>
-          <App />
-        </Router>
-      );
-    }
-  };
-};
-
-
-export default App;
+export default Test;
