@@ -1,2 +1,16 @@
 # Zmanager
-Blockchain secure &amp; super node manager with dashboard
+ZenCash secure & super node manager with dashboard (In dev)
+
+---
+
+
+## Install
+```
+npm install; cd client && npm install; cd ..
+npm install -g nodemon yarn
+```
+
+## Compiling the project
+```
+yarn dev
+```
