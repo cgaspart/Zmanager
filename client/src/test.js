@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
+import { AppContainer, Body} from './containers';
 
-class Test extends Component {
+export class Test extends Component {
   state = {
     response: '',
     post: '',
@@ -43,20 +44,22 @@ class Test extends Component {
 
 render() {
     return (
-      <div className="App">
-        <header className="App-header">
-        	<p>{this.state.response}</p>
+      <AppContainer>
+        <Body>
+        	<p>Nodes: {this.state.response}</p>
         	<form onSubmit={this.handleSubmit}>
           		<p>
             			<strong>Post to Server:</strong>
           		</p>
           		<input type="text" value={this.state.post} onChange={e => this.setState({ post: e.target.value })}/>
+              <input type="text" value={this.state.post} onChange={e => this.setState({ post: e.target.value })}/>
+              <input type="text" value={this.state.post} onChange={e => this.setState({ post: e.target.value })}/>
           		<button type="submit">Submit</button>
         	</form>
           <button type="button" onClick={this.deleteNode}>Delete</button>
         	<p>{this.state.responseToPost}</p>
-	</header>
-      </div>
+          </Body>
+      </AppContainer>
     );
   }
 }

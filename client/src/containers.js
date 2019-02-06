@@ -26,3 +26,9 @@ export const ExampleBody = styled.div`
   padding: 12px;
   border: 1px solid rgba(0, 0, 0, 0.125);
 `;
+export const Title = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+`;
