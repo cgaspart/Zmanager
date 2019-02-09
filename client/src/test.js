@@ -1,12 +1,22 @@
 import React, { Component } from 'react';
 import './App.css';
 import { AppContainer, Body} from './containers';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import { withStyles, createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
+import MenuItem from '@material-ui/core/MenuItem';
+import TextField from '@material-ui/core/TextField';
 
 export class Test extends Component {
   state = {
-    response: '',
-    post: '',
-    responseToPost: '',
+	response: '',
+	post:{
+	},
+	NodeId: '',
+	NodeName: '',
+	NodePrice: '',
+	NodeType: '1',
+	responseToPost: '',
   };
 
   componentDidMount() {
@@ -23,15 +33,25 @@ export class Test extends Component {
   };
 
   deleteNode = async () => {
-    const response = await fetch('/api/rmExemple');
+    const response = await fetch('/api/rmAll');
     const body = await response.json();
     if (response.status !== 200) throw Error(body.message);
+	this.componentDidMount();
+	this.setState({ responseToPost: body.result.nodes });
     return body;
   }
 
   handleSubmit = async e => {
     e.preventDefault();
-    const response = await fetch('/api/world', {
+	this.state = {
+		post:{
+			NodeId: this.state.NodeId,
+			NodeName: this.state.NodeName,
+			NodePrice: this.state.NodePrice,
+			NodeType: this.state.NodeType
+		}
+	}
+    const response = await fetch('/api/addNode', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -40,6 +60,7 @@ export class Test extends Component {
     });
     const body = await response.text();
     this.setState({ responseToPost: body });
+	this.componentDidMount();
   };
 
 render() {
@@ -49,14 +70,18 @@ render() {
         	<p>Nodes: {this.state.response}</p>
         	<form onSubmit={this.handleSubmit}>
           		<p>
-            			<strong>Post to Server:</strong>
+         			<strong>Post to Server:</strong>
           		</p>
-          		<input type="text" value={this.state.post} onChange={e => this.setState({ post: e.target.value })}/>
-              <input type="text" value={this.state.post} onChange={e => this.setState({ post: e.target.value })}/>
-              <input type="text" value={this.state.post} onChange={e => this.setState({ post: e.target.value })}/>
+          		<input type="number" name="node ID" value={this.state.NodeId} onChange={e => this.setState({ NodeId: e.target.value })}/>
+          		<input type="text" name="node domain name" value={this.state.NodeName} onChange={e => this.setState({ NodeName: e.target.value })}/>
+          		<input type="number" name="price" value={this.state.NodePrice} onChange={e => this.setState({ NodePrice: e.target.value })}/>
+				<select value={this.state.NodeType} onChange={e => this.setState({NodeType: e.target.value })}>
+					<option selected value="1">Secure node</option>
+					<option value="2">Super node</option>
+				</select>
           		<button type="submit">Submit</button>
         	</form>
-          <button type="button" onClick={this.deleteNode}>Delete</button>
+          <button type="button" onClick={this.deleteNode}>Reset</button>
         	<p>{this.state.responseToPost}</p>
           </Body>
       </AppContainer>

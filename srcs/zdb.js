@@ -17,9 +17,22 @@ exports.deleteTest = () => {
 	.write()
 }
 
+exports.deleteAll = () => {
+	let res = db.set('nodes', [])
+    .write()
+	return (res);
+}
+
 exports.addexemple = () => {
 	let res = db.get('nodes')
-	.push({ id: 132598, name: 'zen-node01.uredine.com', price: 5})
+	.push({ id: shortid.generate(), nodeid: 132598, name: 'zen-node01.uredine.com', price: 5, type: 1})
+	.write()
+	return (res);
+}
+
+exports.addNode = (post) => {
+	let res = db.get('nodes')
+	.push({id: post.NodeId, name: post.NodeName, price: post.NodePrice, type: post.NodeType})
 	.write()
 	return (res);
 }

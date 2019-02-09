@@ -19,20 +19,20 @@ app.get('/api/addExemple', (req, res) => {
   res.send(success(result));
 })
 
-app.get('/api/rmExemple', (req, res) => {
-  let result = zdb.deleteTest();
+app.get('/api/rmAll', (req, res) => {
+  let result = zdb.deleteAll();
   res.send(success(result));
 })
+
 
 app.get('/api/hello', (req, res) => {
   res.send({ express: 'Hello From Express' });
 });
 
-app.post('/api/world', (req, res) => {
+app.post('/api/addNode', (req, res) => {
   console.log(req.body);
-  res.send(
-    `I received your POST request. This is what you sent me: ${req.body.post}`,
-  );
+  let result = zdb.addNode(req.body.post);
+  res.send(success(result));
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
