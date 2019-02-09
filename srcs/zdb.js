@@ -1,8 +1,8 @@
 require('babel-register');
-const low = require('lowdb')
-const FileSync = require('lowdb/adapters/FileSync')
-const adapter = new FileSync('../db.json')
-const db = low(adapter)
+const low = require('lowdb');
+const FileSync = require('lowdb/adapters/FileSync');
+const adapter = new FileSync('../db.json');
+const db = low(adapter);
 
 db.defaults({ nodes: [], user: {}}).write()
 
@@ -25,7 +25,7 @@ exports.deleteAll = () => {
 
 exports.addexemple = () => {
 	let res = db.get('nodes')
-	.push({ id: shortid.generate(), nodeid: 132598, name: 'zen-node01.uredine.com', price: 5, type: 1})
+	.push({ id: 132598, name: 'zen-node01.uredine.com', price: 5, type: 1})
 	.write()
 	return (res);
 }
