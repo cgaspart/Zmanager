@@ -1,5 +1,6 @@
 # Zmanager
 ZenCash secure & super node manager with dashboard (In dev)
+Equihash mining pool manager (Stratum-proxy)
 
 ---
 
