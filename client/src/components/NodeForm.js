@@ -42,12 +42,12 @@ const currencies = [
   },
 ];
 
-class TextFields extends React.Component {
-  state = {
-    name: 'Cat in the Hat',
-    age: '',
-    multiline: 'Controlled',
-    currency: 'EUR',
+class NodeForm extends React.Component {
+	state = {
+		NodeId: '',
+		NodeName: '',
+		NodePrice: '',
+		NodeType: '1',
   };
 
   handleChange = name => event => {
@@ -63,24 +63,26 @@ class TextFields extends React.Component {
   	  <strong>Post to Server:</strong>
   	  </p>
 
-  	  <TextField
-  	  id="standard-number"
-  	  label="Number"
-  	  value={this.state.NodeId}
-  	  onChange={e => this.setState({ NodeId: e.target.value })}
-  	  type="number"
-  	  className={classes.textField}
-  	  InputLabelProps={{
-  		  shrink: true,
-  	  }}
-  	  margin="normal"/>
+	  <TextField
+          id="outlined-number"
+          label="node ID"
+          value={this.state.NodeId}
+          onChange={e => this.setState({ NodeId: e.target.value })}
+          type="number"
+          className={classes.textField}
+          InputLabelProps={{
+            shrink: true,
+          }}
+          margin="normal"
+          variant="outlined"
+        />
       </form>
     );
   }
 }
 
-TextFields.propTypes = {
+NodeForm.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(TextFields);
+export default withStyles(styles)(NodeForm);
