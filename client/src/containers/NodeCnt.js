@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
-import './App.css';
-import { AppContainer, Body} from './containers';
-import TextFields from './textfield'
+import '../App.css';
+import { AppContainer, Body} from '../containers';
+import TextFields from '../components/NodeForm'
 
-export class Test extends Component {
+export class NodeCnt extends Component {
 	state = {
 		response: '',
 		post:{},
-		NodeId: '',
-		NodeName: '',
-		NodePrice: '',
-		NodeType: '1',
 		responseToPost: '',
 	};
 
@@ -84,4 +80,4 @@ render() {
 	}
 }
 
-export default (Test);
+export default (NodeCnt);

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import styled from "styled-components";
 import { MemoryRouter as Router, Route, Switch } from "react-router-dom";
-import  { AppNavigation } from './AppNavigation.js'
+import  { AppNavigation } from './components/AppNavigation.js'
 import { AppContainer as BaseAppContainer, ExampleNavigation as BaseNavigation, Body, Title } from "./containers";
 import './App.css';
-import {Test} from './test';
-import {DashBoard} from './DashBoard'
+import {NodeCnt} from './containers/NodeCnt';
+import {DashBoard} from './containers/DashBoard'
 import logo from './logo.png';
 
 const AppContainer = styled(BaseAppContainer)`
@@ -34,8 +34,8 @@ render() {
         </Navigation>
         <Body>
           <Switch>
-            <Route path="//nodes" component={Test} />
-            <Route path="//users" component={Test} />
+            <Route path="//nodes" component={NodeCnt} />
+            <Route path="//miners" component={NodeCnt} />
             <Route path="//dashboard" component={DashBoard} />
             <Route path="/" exact component={DashBoard} />
           </Switch>

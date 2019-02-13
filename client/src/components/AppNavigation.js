@@ -1,14 +1,11 @@
 import React from "react";
 import { withRR4, Nav as BaseNav } from "react-sidenav";
 import styled from "styled-components";
-import './App.css';
+import '../App.css';
 import { Icon as BaseIcon } from "react-icons-kit";
 import { dashboard } from "react-icons-kit/fa/dashboard";
-import { users } from "react-icons-kit/fa/users";
+import Asic from "@material-ui/icons/Memory";
 import { cubes } from "react-icons-kit/fa/cubes";
-
-
-
 
 const IconCnt = styled.div`
   color: #FFF;
@@ -16,6 +13,15 @@ const IconCnt = styled.div`
   justify-content: center;
   aligh-items: center;
 `;
+
+const styles = {
+
+  largeIcon: {
+    width: 200,
+    height: 200,
+  },
+
+};
 
 const Nav = styled(BaseNav)`
   flex-direction: column;
@@ -52,11 +58,11 @@ export class AppNavigation extends React.Component {
               </IconCnt>
               <Text>Nodes</Text>
             </Nav>
-        <Nav id="users">
+        <Nav id="miners">
               <IconCnt>
-                <Icon icon={users} />
+                <Asic fontSize='large' />
               </IconCnt>
-              <Text>Users</Text>
+              <Text>Miners</Text>
             </Nav>
       </SideNav>
     );
