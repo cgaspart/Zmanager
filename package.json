@@ -1,19 +1,19 @@
 {
-  "name": "zmanager",
+  "proxy": "http://localhost:5000",
+  "name": "zen",
   "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "keywords": [],
+  "license": "ISC",
+  "main": "server.js",
   "scripts": {
-    "client": "cd client && yarn start",
-    "server": "nodemon server.js",
-    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+    "start": "nodemon server.js"
   },
   "dependencies": {
-    "babel-register": "^6.26.0",
     "body-parser": "^1.18.3",
+    "concurrently": "^4.1.0",
     "express": "^4.16.4",
-    "lowdb": "^1.0.0",
-    "shortid": "^2.2.14"
-  },
-  "devDependencies": {
-    "concurrently": "^4.0.1"
+    "nodemon": "^1.18.10"
   }
 }
