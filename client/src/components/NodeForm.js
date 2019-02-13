@@ -1,9 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { withStyles } from '@material-ui/core/styles';
+import {withStyles, MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import Grid from '@material-ui/core/Grid';
+
+const theme = createMuiTheme({
+	palette: {
+		type: 'dark',
+	}
+})
 
 const styles = theme => ({
   container: {
@@ -23,25 +31,6 @@ const styles = theme => ({
   },
 });
 
-const currencies = [
-  {
-    value: 'USD',
-    label: '$',
-  },
-  {
-    value: 'EUR',
-    label: '€',
-  },
-  {
-    value: 'BTC',
-    label: '฿',
-  },
-  {
-    value: 'JPY',
-    label: '¥',
-  },
-];
-
 class NodeForm extends React.Component {
 	state = {
 		NodeId: '',
@@ -50,33 +39,62 @@ class NodeForm extends React.Component {
 		NodeType: '1',
   };
 
-  handleChange = name => event => {
-    this.setState({ [name]: event.target.value });
-  };
-
   render() {
     const { classes } = this.props;
 
     return (
-		<form className={classes.container} noValidate autoComplete="off" onSubmit={this.handleSubmit}>
-  	  <p>
-  	  <strong>Post to Server:</strong>
-  	  </p>
+		<MuiThemeProvider theme={theme}>
 
-	  <TextField
-          id="outlined-number"
-          label="node ID"
-          value={this.state.NodeId}
-          onChange={e => this.setState({ NodeId: e.target.value })}
-          type="number"
-          className={classes.textField}
-          InputLabelProps={{
-            shrink: true,
-          }}
-          margin="normal"
-          variant="outlined"
-        />
-      </form>
+		<Grid container className={classes.root} spacing={16}>
+        <Grid item xs={12}>
+          <Grid container className={classes.demo} justify="center" spacing={5}>
+              <Grid item>
+			  <form className={classes.container} noValidate autoComplete="off" onSubmit={this.handleSubmit}>
+			<TextField
+				id="outlined-number"
+				label="node ID"
+				value={this.state.NodeId}
+				onChange={e => this.setState({ NodeId: e.target.value })}
+				type="number"
+				className={classes.textField}
+				InputLabelProps={{
+				  shrink: true,
+				}}
+				margin="normal"
+				variant="outlined"
+			  />
+			  <TextField
+				id="outlined-name"
+				label="Name"
+				placeholder="node01.exemple.com"
+				className={classes.textField}
+				value={this.state.NodeName}
+				onChange={e => this.setState({ NodeName: e.target.value })}
+				margin="normal"
+				variant="outlined"
+			  />
+			  <TextField
+				  id="outlined-number"
+				  label="price"
+				  value={this.state.NodePrice}
+				  onChange={e => this.setState({ NodePrice: e.target.value })}
+				  type="number"
+				  className={classes.textField}
+				  InputLabelProps={{
+					shrink: true,
+				  }}
+				  margin="normal"
+				  variant="outlined"
+				  InputProps={{
+				  startAdornment: <InputAdornment position="start">$</InputAdornment>,
+				}}
+				/>
+			</form>
+              </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+	  </MuiThemeProvider>
     );
   }
 }

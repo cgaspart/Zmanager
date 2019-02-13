@@ -1,10 +1,10 @@
 {
-  "wallet": "t1YAdYcnKR2ozADWPUvmgnDgf86gfsxQEEE",
+  "wallet": "t1Ku3Cx6T2RSkkBBoib8uuydf2c1RuDs7Ut",
   "password" : "x",
   "port": 8000,
   "proxy_name" : "zecproxy",
-  "enable_worker_id": true, 
-  "pool" : { "host" : "zec-eu1.nanopool.org"  , "port" : 6666 },
+  "enable_worker_id": true,
+  "pool" : { "host" : "eu1-zcash.flypool.org"  , "port" : 3333 },
   "pool_failover_enabled": true,
   "pool_failover" : [ { "host" : "zec-eu2.nanopool.org"  , "port" : 6666 },
                       { "host" : "eu1-zcash.flypool.org"  , "port" : 3443,  "ssl" : true},

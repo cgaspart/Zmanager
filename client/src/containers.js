@@ -15,13 +15,13 @@ export const Navigation = styled.div`
 export const ExampleNavigation = styled(Navigation)`
   height: 100%;
   margin-right: 4px;
-  border: 1px solid rgba(0, 0, 0, 0.125);  
+  border: 1px solid rgba(0, 0, 0, 0.125);
 `;
 export const Body = styled.div`
   padding: 12px;
   height: 100vh;
 `;
-export const ExampleBody = styled.div`  
+export const ExampleBody = styled.div`
   background: #fff;
   padding: 12px;
   border: 1px solid rgba(0, 0, 0, 0.125);

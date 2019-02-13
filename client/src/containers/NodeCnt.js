@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import '../App.css';
 import { AppContainer, Body} from '../containers';
-import TextFields from '../components/NodeForm'
+import NodeForm from '../components/NodeForm'
+import Grid from '@material-ui/core/Grid';
 
 export class NodeCnt extends Component {
 	state = {
@@ -58,7 +59,10 @@ render() {
 	return (
 			<AppContainer>
 			<Body>
-			<TextFields />
+			<p>
+				<strong>Add node:</strong>
+			</p>
+			<NodeForm />
 			<p>Nodes: {this.state.response}</p>
 			<form onSubmit={this.handleSubmit}>
 
