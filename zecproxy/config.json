@@ -2,7 +2,7 @@
   "wallet": "t1Ku3Cx6T2RSkkBBoib8uuydf2c1RuDs7Ut",
   "password" : "x",
   "port": 8000,
-  "proxy_name" : "zecproxy",
+  "proxy_name" : "Zmanager",
   "enable_worker_id": true,
   "pool" : { "host" : "eu1-zcash.flypool.org"  , "port" : 3333 },
   "pool_failover_enabled": true,
