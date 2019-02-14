@@ -48,7 +48,8 @@ class NodeForm extends React.Component {
 		<Grid container className={classes.root} spacing={16}>
         <Grid item xs={12}>
           <Grid container className={classes.demo} justify="center" spacing={5}>
-              <Grid item>
+            {[0].map(value => (
+              <Grid key={value} item>
 			  <form className={classes.container} noValidate autoComplete="off" onSubmit={this.handleSubmit}>
 			<TextField
 				id="outlined-number"
@@ -91,6 +92,7 @@ class NodeForm extends React.Component {
 				/>
 			</form>
               </Grid>
+            ))}
           </Grid>
         </Grid>
       </Grid>

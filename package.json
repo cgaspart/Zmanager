@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "scripts": {
     "client": "cd client && yarn start",
+	"proxy": "cd zecproxy && nodemon proxy.js",
     "server": "nodemon server.js",
-    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn proxy\" \"yarn client\""
   },
   "dependencies": {
     "babel-register": "^6.26.0",
