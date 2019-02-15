@@ -15,21 +15,16 @@ app.get('/search/*', (req, res) => {
 		count: 4,
 		nodes: [
 			{ text: 'node1' }, {text: 'node2'},
-			{ text: 'node1' }, {text: 'node2'},
-			{ text: 'node1' }, {text: 'node2'},
 		],
 		accounts: [
-			{ text: 'user1' }, {text: 'user2'},
 			{ text: 'user1' }, {text: 'user2'},
 		]
 	}
 	res.send(data).json()
-	res.end()
 })
 
 app.get('/api/*', (req, res) => {
 	res.send('api-node')
-	res.end()
 })
 
 app.listen(port, (req, res) => {

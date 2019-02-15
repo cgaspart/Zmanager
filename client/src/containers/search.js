@@ -7,12 +7,12 @@ import SearchItem from '../components/search'
 const style = {
 	header: {
 		fontSize: 20,
-		color: 'rgba(50, 50, 60, 0.5)',
+		color: 'rgb(50, 50, 60)',
 		padding: 25,
 	},
 	subheader: {
 		fontSize: 20,
-		color: 'rgba(50, 50, 60, 0.2)',
+		color: 'rgba(50, 50, 60, 0.5)',
 	}
 }
 

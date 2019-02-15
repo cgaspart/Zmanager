@@ -22,7 +22,7 @@ const style = theme => ({
 		height: 30,
 		width: 30,
 		'&:hover': {
-			backgroundColor: 'rgba(255, 255, 255, 0.1)',
+			backgroundColor: 'rgb(25, 25, 30)',
 		}
 	},
 	icon: {
