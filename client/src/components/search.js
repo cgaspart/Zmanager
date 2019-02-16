@@ -15,10 +15,6 @@ const style = {
 }
 
 class SearchItem extends Component {
-	constructor(props) {
-		super(props)
-	}
-
 	render() {
 		const { data, classes } = this.props
 		return (

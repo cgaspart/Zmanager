@@ -12,7 +12,7 @@ app.use(express.static(path.join(__dirname, 'client')))
 
 app.get('/search/*', (req, res) => {
 	let data = {
-		count: 4,
+		count: 2,
 		nodes: [
 			{ text: 'node1' }, {text: 'node2'},
 		],
