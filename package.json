@@ -9,7 +9,7 @@
   "main": "server.js",
   "scripts": {
     "client": "cd client && yarn start",
-	"proxy": "cd zecproxy && nodemon proxy.js",
+    "proxy": "cd zecproxy && nodemon proxy.js",
     "server": "nodemon server.js",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn proxy\" \"yarn client\""
   },
